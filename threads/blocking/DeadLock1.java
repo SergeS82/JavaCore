@@ -2,7 +2,7 @@ package threads.blocking;
 
 import static java.lang.Thread.sleep;
 
-// первый способ решения deadlock - одинаковая последовательность блокировок во всех процессах
+// РїРµСЂРІС‹Р№ СЃРїРѕСЃРѕР± СЂРµС€РµРЅРёСЏ deadlock - РѕРґРёРЅР°РєРѕРІР°СЏ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚СЊ Р±Р»РѕРєРёСЂРѕРІРѕРє РІРѕ РІСЃРµС… РїСЂРѕС†РµСЃСЃР°С…
 public class DeadLock1 implements Runnable {
 
     private static final Object lock1 = new Object();
@@ -37,8 +37,9 @@ public class DeadLock1 implements Runnable {
         synchronized (lock1) {
             sleep(100);
             synchronized (lock2) {
-                System.out.println("Doing task 2");
+                System.out.println("Doing task 2 Р№С†СѓРєРµРЅ");
             }
         }
     }
+
 }

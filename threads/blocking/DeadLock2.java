@@ -2,7 +2,7 @@ package threads.blocking;
 
 import static java.lang.Thread.sleep;
 
-// второй способ решения deadlock - убрать вложенность блокировок
+// РІС‚РѕСЂРѕР№ СЃРїРѕСЃРѕР± СЂРµС€РµРЅРёСЏ deadlock - СѓР±СЂР°С‚СЊ РІР»РѕР¶РµРЅРЅРѕСЃС‚СЊ Р±Р»РѕРєРёСЂРѕРІРѕРє
 public class DeadLock2 implements Runnable {
 
     private static final Object lock1 = new Object();

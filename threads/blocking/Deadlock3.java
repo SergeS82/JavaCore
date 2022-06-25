@@ -14,7 +14,7 @@ public class Deadlock3 {
                 e.printStackTrace();
             }
             synchronized (lock2){
-                System.out.println("Работа 1");
+                System.out.println("Р Р°Р±РѕС‚Р° 1");
             }
         }
     }
@@ -26,7 +26,7 @@ public class Deadlock3 {
                 e.printStackTrace();
             }
             synchronized (lock1){
-                System.out.println("Работа 2");
+                System.out.println("Р Р°Р±РѕС‚Р° 2");
             }
         }
     }

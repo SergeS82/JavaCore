@@ -1,10 +1,10 @@
-Материалы модуля 12 - 13
+РњР°С‚РµСЂРёР°Р»С‹ РјРѕРґСѓР»СЏ 12 - 13
 
--   extends Tread - класс потока, прям на объекте вызаваем метод start()
--   implements Runnable - передаем объект содержащий метод run в new Thread(<объект>)
--   [ThreadsMethods.txt]    - методы класса Thread
--   [ThreadStates.txt]      - состояния потоков
--   threads.interruptException  - прерывание выполенния потоков
--   Пример [speed.OneThread, speed.ThreeThreads]    - непересекающиеся потоки
--   Thread.currentThread()  - static method возвращает текущий поток запустивший public static void main(String[] args)
--   [blocking]  - блокировки объектов потоками, синхронизация, volatile
+-   extends Tread - РєР»Р°СЃСЃ РїРѕС‚РѕРєР°, РїСЂСЏРј РЅР° РѕР±СЉРµРєС‚Рµ РІС‹Р·Р°РІР°РµРј РјРµС‚РѕРґ start()
+-   implements Runnable - РїРµСЂРµРґР°РµРј РѕР±СЉРµРєС‚ СЃРѕРґРµСЂР¶Р°С‰РёР№ РјРµС‚РѕРґ run РІ new Thread(<РѕР±СЉРµРєС‚>)
+-   [ThreadsMethods.txt]    - РјРµС‚РѕРґС‹ РєР»Р°СЃСЃР° Thread
+-   [ThreadStates.txt]      - СЃРѕСЃС‚РѕСЏРЅРёСЏ РїРѕС‚РѕРєРѕРІ
+-   threads.interruptException  - РїСЂРµСЂС‹РІР°РЅРёРµ РІС‹РїРѕР»РµРЅРЅРёСЏ РїРѕС‚РѕРєРѕРІ
+-   РџСЂРёРјРµСЂ [speed.OneThread, speed.ThreeThreads]    - РЅРµРїРµСЂРµСЃРµРєР°СЋС‰РёРµСЃСЏ РїРѕС‚РѕРєРё
+-   Thread.currentThread()  - static method РІРѕР·РІСЂР°С‰Р°РµС‚ С‚РµРєСѓС‰РёР№ РїРѕС‚РѕРє Р·Р°РїСѓСЃС‚РёРІС€РёР№ public static void main(String[] args)
+-   [blocking]  - Р±Р»РѕРєРёСЂРѕРІРєРё РѕР±СЉРµРєС‚РѕРІ РїРѕС‚РѕРєР°РјРё, СЃРёРЅС…СЂРѕРЅРёР·Р°С†РёСЏ, volatile

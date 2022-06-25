@@ -7,20 +7,20 @@ class Water {}
 public class Fox {
 
     private void eatAndDrink(Food food, Water water) {
-        synchronized(food) { // ждем высвобождения объекта Food
+        synchronized(food) { // Р¶РґРµРј РІС‹СЃРІРѕР±РѕР¶РґРµРЅРёСЏ РѕР±СЉРµРєС‚Р° Food
             System.out.println("Got food!");
             move();
-            synchronized(water) { // ждем высвобождения объекта Water
+            synchronized(water) { // Р¶РґРµРј РІС‹СЃРІРѕР±РѕР¶РґРµРЅРёСЏ РѕР±СЉРµРєС‚Р° Water
                 System.out.println("Got water!");
             }
         }
     }
 
     private void drinkAndEat(Food food, Water water) {
-        synchronized(water) { // ждем высвобождения объекта Water
+        synchronized(water) { // Р¶РґРµРј РІС‹СЃРІРѕР±РѕР¶РґРµРЅРёСЏ РѕР±СЉРµРєС‚Р° Water
             System.out.println("Got water!");
             move();
-            synchronized(food) { // ждем высвобождения объекта Food
+            synchronized(food) { // Р¶РґРµРј РІС‹СЃРІРѕР±РѕР¶РґРµРЅРёСЏ РѕР±СЉРµРєС‚Р° Food
                 System.out.println("Got food!");
             }
         }
@@ -30,7 +30,7 @@ public class Fox {
         try {
             Thread.sleep(100);
         } catch(InterruptedException exception) {
-            // обработать, если требует логика
+            // РѕР±СЂР°Р±РѕС‚Р°С‚СЊ, РµСЃР»Рё С‚СЂРµР±СѓРµС‚ Р»РѕРіРёРєР°
         }
     }
 

@@ -8,4 +8,4 @@
 -   Пример [speed.OneThread, speed.ThreeThreads]    - непересекающиеся потоки
 -   Thread.currentThread()  - static method возвращает текущий поток запустивший public static void main(String[] args)
 -   [blocking]  - блокировки объектов потоками, синхронизация, volatile
--   [concurrentModificationException.Test1] ConcurrentModificationException
+-   [concurrentModificationException.*] работа с конкурентными коллекциями

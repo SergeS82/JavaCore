@@ -9,27 +9,26 @@ import static java.lang.Thread.sleep;
 
 public class Pizzeria {
     private BlockingQueue<String> queue = new LinkedBlockingQueue();
-    private final ExecutorService executorService = Executors.newFixedThreadPool(2);
+    private final ExecutorService executorService = Executors.newFixedThreadPool(3);
     private ConcurrentMap<Track,Long> tracks = new ConcurrentHashMap<>();
     static private final long CLIENT_MAX_WAIT = 750L;
     static private final long WORK_DAY = 5000l;
     static private final long DAY_START = System.currentTimeMillis();
 
     public Pizzeria() {
-        tracks.put(new Track("Tr1"),0l);
-        tracks.put(new Track("Tr2"),0l);
-        for (Map.Entry<Track,Long> track : tracks.entrySet()) {
-            executorService.submit(track.getKey());
-        }
-        new Thread(() -> {
+        executorService.submit(() -> {
             try {
                 sleep(Pizzeria.WORK_DAY);
                 executorService.shutdownNow();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
-        }).start();
+        });
+        tracks.put(new Track("Tr1"),0l);
+        tracks.put(new Track("Tr2"),0l);
+        for (Map.Entry<Track,Long> track : tracks.entrySet()) {
+            executorService.submit(track.getKey());
+        }
     }
     //
     long getTimeToEnd(){

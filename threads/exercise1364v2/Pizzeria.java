@@ -87,15 +87,15 @@ public class Pizzeria {
 
         @Override
         public void run() {
-            String pizza;
+            String pizzaName;
             try {
                 while (!currentThread().isInterrupted()) {
-                    pizza = queue.poll(1, TimeUnit.DAYS);
-                    if (pizza == null) continue;
+                    pizzaName = queue.poll(1, TimeUnit.DAYS);
+                    if (pizzaName == null) continue;
                     tracks.put(this,System.currentTimeMillis());
                     sleep(DELIVERY_TIME);
                     tracks.put(this,0L);
-                    System.out.println(pizza+" is delivered");
+                    System.out.println(pizzaName+" is delivered");
                 }
             } catch (InterruptedException e) {
             }

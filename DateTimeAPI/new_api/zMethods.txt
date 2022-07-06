@@ -1,0 +1,34 @@
+Методы добавления разных типов временных промежутков для получения новых объектов даты и/или времени.
+Существуют противоположные методы с паттерном в названии minus соответственно для вычитания временных промежутков.
+-   LocalDate plusDays(long days)
+-   LocalDate plusMonths(long months)
+-   LocalDate plusWeeks(long weeks)
+-   LocalDate plusYears(long years)
+-   LocalTime plusHours(long hours)
+-   LocalTime plusMinutes(long minutes)
+-   LocalTime plusSeconds(long seconds)
+-   LocalTime plusNanos(long nanos)
+-   LocalDateTime plusYears(long years)
+""
+-   LocalDateTime plusNanos(long nanos)
+-   ZonedDateTime plusYears(long years)
+""
+-   ZonedDateTime plusNanos(long nanos)
+Методы переопределения разных типов временных промежутков
+для получения новых объектов даты и/или времени.
+-   LocalDate withDayOfMonth(int day)
+-   LocalDate withDayOfYear(int day)
+-   LocalDate withMonth(int month)
+-   LocalDate withYear(int year)
+-   LocalTime withHour(int hour)
+-   LocalTime withMinute(int minute)
+-   LocalTime withSecond(int second)
+-   LocalTime withNano(int nano)
+-   LocalDateTime withYear(int year)
+…
+-   LocalDateTime withNano(int nano)
+-   ZonedDateTime withYear(int year)
+…
+-   ZonedDateTime withNano(int nano)
+
+

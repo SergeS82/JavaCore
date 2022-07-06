@@ -1,3 +1,6 @@
+import java.time.LocalDate;
+import java.util.ArrayList;
+
 public class Test implements Runnable {
 
     public void run() {
@@ -13,6 +16,8 @@ public class Test implements Runnable {
     public static void main(String[] args) throws InterruptedException {
         new Thread(new Test()).run();
         new Thread(new Test()).run();
+        ArrayList<String> strings = new ArrayList<>();
+        LocalDate now = LocalDate.now();
     }
 
 }

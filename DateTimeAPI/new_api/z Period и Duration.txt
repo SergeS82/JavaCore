@@ -1,0 +1,9 @@
+Класс java.time.Period работает в соответствии со своим названием — определяет какой-то заданный период времени
+, при этом работает только с теми периодами, с которыми работает класс LocalDate.
+
+Рассмотрим конструкторы:
+-   public static Period ofYears(int years)                     Period.ofYears(1)           период 1 года
+-   public static Period ofMonths(int months)                   Period.ofMonths(10)         период 10 месяцев
+-   public static Period ofWeeks(int weeks)                     Period.ofWeeks(3)           период 3 недели
+-   public static Period ofDays(int days)                       Period.ofDays(11)           период 11 дней
+-   public static Period of(int years, int months, int days)    Period.of(3, 4, 16)         период 3 лет, 4 месяцев и 16 дней

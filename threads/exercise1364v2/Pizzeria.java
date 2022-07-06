@@ -16,14 +16,20 @@ public class Pizzeria {
     static private final long DAY_START = System.currentTimeMillis();
 
     public Pizzeria() {
-        executorService.submit(() -> {
+        // отдельный процесс следящий за окончанием рабочего дня
+        new Thread(() -> {
             try {
                 sleep(Pizzeria.WORK_DAY);
                 executorService.shutdownNow();
             } catch (InterruptedException e) {
                 e.printStackTrace();
+            } finally {
+                String pizzaName;
+                while ((pizzaName = queue.poll())!=null)
+                    System.out.println(pizzaName+" is not delivered");
             }
-        });
+        }).start();
+        //старт вагончиков
         tracks.put(new Track("Tr1"),0l);
         tracks.put(new Track("Tr2"),0l);
         for (Map.Entry<Track,Long> track : tracks.entrySet()) {
@@ -58,11 +64,13 @@ public class Pizzeria {
 
     public void order(String pizzaName) {
         try {
+            if (executorService.isShutdown() || executorService.isTerminated())
+                throw new PizzeriaOutOfTimeException(2, pizzaName + " is NOT delivered");
             if (this.checkEndWorkDay())
                 throw new PizzeriaOutOfTimeException(1, pizzaName + " is NOT delivered");
             else if (this.getTimeToEnd() + Track.DELIVERY_TIME > CLIENT_MAX_WAIT) {
                 throw new PizzeriaOutOfTimeException(2, pizzaName + " is NOT delivered");
-            } else queue.offer(pizzaName);
+            } else {queue.offer(pizzaName);}
         }catch (PizzeriaOutOfTimeException e){
             System.out.println(e.getMessage());
             if (e.type==1) {
@@ -88,7 +96,7 @@ public class Pizzeria {
         public void run() {
             String pizzaName;
             try {
-                while (!currentThread().isInterrupted()) {
+                while (1==1) {
                     pizzaName = queue.poll(1, TimeUnit.DAYS);
                     if (pizzaName == null) continue;
                     tracks.put(this,System.currentTimeMillis());

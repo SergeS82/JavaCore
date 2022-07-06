@@ -1,0 +1,21 @@
+Метод                               Что будет с бесконечным стримом     Возвращаемый тип        Редукция    Описание
+-   boolean allMatch(Predicate<?    иногда завершает работу             boolean                 нет         проверяет, все ли элементы соответствуют boolean-условию (Predicate). Нет необходимости проверять дальнейшие элементы, если один из них не проходит проверку
+    super T> predicate);
+-   boolean anyMatch(Predicate      иногда завершает работу         	boolean	                нет	        проверяет, соответствует ли хотя бы 1 элемент  boolean-условию (Predicate). Нет необходимости проверять дальнейшие элементы, если один из них проходит проверку
+    <? super T >predicate);
+-   boolean noneMatch(Predicate     иногда завершает работу	            boolean	                нет	        проверяет, все ли элементы не соответствуют boolean-условию (Predicate). Нет необходимости проверять дальнейшие элементы, если один из них проходит проверку
+    <? super T> predicate);
+-   <R, A> R collect(Collector      не завершает работу	                разные типы	            да	        комбинирует все элементы стрима в изменяемый объект (например, в ArrayList)
+    <? super T, A, R> collector);
+-   long count();                   не завершает работу	                long	                да	        определяет количество элементов в конечном стриме
+-   Optional<T> findAny();          завершает работу	                Optional<T>	            нет	        возвращает любой один элемент из стрима (первый)
+    Optional<T> findFirst();
+-   void forEach(Consumer           не завершает работу	                void	                нет	        работает с каждым элементом стрима (например, для печати)
+    <? super T> action);
+-   Optional<T> min(Comparator      не завершает работу	                Optional<T>	            да	        определяет минимальный/максимальный элемент стрима согласно переданному компаратору
+    <? super T> comparator);
+    Optional<T> max(Comparator
+    <? super T> comparator);
+-   <R> R collect(Supplier<R> supplier,     не завершает работу	        разные типы	            да	        комбинирует все элементы стрима в один примитив или объект
+    BiConsumer<R, ? super T> accumulator,
+    BiConsumer<R, R> combiner);

@@ -1,0 +1,26 @@
+IntStream — для работы с примитивами int, short, byte, char;
+LongStream— для работы с long;
+DoubleStream — для работы с double.
+
+Метод                                                   Описание                                                        Пример
+-   public static IntStream range(int startInclusive    Создается последовательный, в порядке возрастания, стрим        IntStream range = IntStream.range(1, 5); // 1, 2, 3, 4
+    , int endExclusive)                                 чисел от нижней границы включительно до верхней
+    public static LongStream range(long startInclusive  границы не включительно
+    , final long endExclusive)
+-   public static IntStream rangeClosed(int             То же, включая верхнюю границу                                  IntStream range = IntStream.rangeClosed(1, 5); // 1, 2, 3, 4, 5
+    startInclusive, int endInclusive)
+    public static LongStream rangeClosed(long
+    startInclusive, final long endInclusive)
+-   public static Builder builder()                     Позволяет создавать новый объект стрима при помощи паттерна     DoubleStream ds = DoubleStream.builder()
+                                                        проектирования Builder (см. ссылку про него ниже)               .add(3d)
+                                                                                                                        .add(5.6d)
+                                                                                                                        .add(8d)
+                                                                                                                        .build(); // 3 5.6 8
+-   int sum();                                          Возвращает сумму элементов стрима                               IntStream range = IntStream.range(1, 5);
+    long sum();                                                                                                         range.sum(); // 10
+    double sum();
+-   OptionalDouble average();                           Считает среднее арифметическое возвращает специальный           DoubleStream ds = DoubleStream.of(2d, 4d, 6d);
+                                                        тип похожий по функционалу на Optional<Double>                  ds.average().orElse(Double.NaN); // 4
+
+
+

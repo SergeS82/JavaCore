@@ -20,7 +20,6 @@ public class Exercise1458 {
         System.out.println(res);
     }
     public static void v2(List<String> ls){
-        Integer i = 1;
         System.out.println(ls.stream()
                 .map(n -> n.length())
                 .sorted()

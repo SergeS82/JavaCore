@@ -1,0 +1,3 @@
+[MemoryLeakExample]         -   утечка через внутренний класс
+[MemoryLeakExampleStatic]   -   утечка через статические поля
+[ThreadLocalLeakExample]    -   утечка через потоки и thread-local
